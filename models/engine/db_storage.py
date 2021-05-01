@@ -30,6 +30,10 @@ class DBStorage:
         if getenv('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)
 
+    def close(self):
+        '''closes session'''
+        self.__session.remove()
+
     def all(self, cls=None):
         """queries current db session for all objs depending on cls"""
         objects = {}
