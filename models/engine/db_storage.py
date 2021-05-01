@@ -32,7 +32,7 @@ class DBStorage:
 
     def close(self):
         '''closes session'''
-        self.__session.remove()
+        self.__session.close()
 
     def all(self, cls=None):
         """queries current db session for all objs depending on cls"""
